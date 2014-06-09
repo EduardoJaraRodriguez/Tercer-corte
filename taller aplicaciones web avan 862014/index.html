@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Crear y descargar archivos con Javascript</title>
+    <script type="text/javascript">
+      
+      function descargarArchivo(contenidoEnBlob, nombreArchivo) 
+      {
+        //creamos un <span class="jvegxz5rou" id="jvegxz5rou_1">FileReader</span> para leer el Blob
+        var reader = new FileReader();
+        //Definimos la función que manejará el archivo
+        //una vez haya terminado de leerlo
+        reader.onload = function (event) 
+        {
+          //Usaremos un link para iniciar la descarga 
+          var save = document.createElement('a');
+          save.href = event.target.result;
+          save.target = '_blank';
+          //Truco: así le damos el nombre al archivo 
+          save.download = nombreArchivo || 'archivo.dat';
+          var clicEvent = new MouseEvent('click', 
+          {
+            'view': window,
+            'bubbles': true,
+            'cancelable': true
+          });
+          //Simulamos un clic del usuario
+          //no es necesario agregar el link al DOM.
+          save.dispatchEvent(clicEvent);
+          //Y liberamos recursos...
+          (window.URL || window.webkitURL).revokeObjectURL(save.href);
+        };
+      };
+
+      function obtenerDatos() {
+        //CÓDIGO AQUÍ
+        return {
+                  nombre: document.getElementById('textNombre').value,
+                  telefono: document.getElementById('textTelefono').value,
+                  fecha: (new Date()).toLocaleDateString()
+                };
+      };
+
+
+      function escaparXML(cadena) {
+        //CÓDIGO AQUÍ
+                 if (typeof cadena !== 'string') {
+            return '';
+          };
+          cadena = cadena.replace('&', '&amp;')
+                         .replace('<', '&lt;')
+                         .replace('>', '&gt;')
+                         .replace('"', '&quot;');
+          return cadena;
+      };
+
+
+      function generarTexto(datos) {
+        //CÓDIGO AQUÍ
+        var texto = [];
+                texto.push('Datos <span class="jvegxz5rou" id="jvegxz5rou_19">Personales</span>:\n');
+                texto.push('Nombre: ');
+                texto.push(datos.nombre);
+                texto.push('\n');
+                texto.push('Teléfono: ');
+                texto.push(datos.telefono);
+                texto.push('\n');
+                texto.push('Fecha: ');
+                texto.push(datos.fecha);
+                texto.push('\n');
+                //El constructor de Blob requiere un Array en el primer 
+                //parámetro así que no es necesario usar toString. El 
+                //segundo parámetro es el tipo MIME del archivo
+                new Blob(texto, {type: 'text/plain'
+                });  
+              };
+      
+      function generarXml(datos) {
+        //CÓDIGO AQUÍ
+
+        var texto1 = [];
+            texto1.push('<?xml version="1.0" encoding="UTF-8" ?>\n');
+            texto1.push('<datos>\n');
+            texto1.push('\t<nombre>');
+            texto1.push(escaparXML(datos.nombre));
+            texto1.push('</nombre>\n');
+            texto1.push('\t<telefono>');
+            texto1.push(escaparXML(datos.telefono));
+            texto1.push('</telefono>\n');
+            texto1.push('\t<fecha>');
+            texto1.push(escaparXML(datos.fecha));
+            texto1.push('</fecha>\n');
+            texto1.push('</datos>');
+            //No olvidemos especificar el tipo MIME correcto :)
+            return new Blob(texto1, {
+                type: 'application/xml'
+            });
+          };
+          window.addEventListener('DOMContentLoaded', function(){
+ 
+        document.getElementById('boton-xml').addEventListener('click', function () {
+          var datos = obtenerDatos();
+          descargarArchivo(generarXml(datos), 'archivo.xml');
+        }, false);
+ 
+        document.getElementById('boton-txt').addEventListener('click', function () {
+          var datos = obtenerDatos();
+          descargarArchivo(generarTexto(datos), 'archivo.txt');
+        }, false);
+ 
+      }, false);
+   </script> 
+  </head>
+  <body>
+
+    <h3>Datos Personales:</h3>
+    <div>
+      <label for="textNombre">Nombre:</label>
+      <input type="text" id="textNombre" value="Pedro Pérez <Ing. & Lic.>" /><br/>
+      <label for="textTelefono">Teléfono:</label>
+      <input type="text" id="textTelefono" value="+58.212.555.5555" /><br/>
+    </div><br/>
+    <input type="button" id="boton-txt" value="Descargar TXT" /><br/>
+    <input type="button" id="boton-xml" value="Descargar XML" />
+  </body>
+</html>
