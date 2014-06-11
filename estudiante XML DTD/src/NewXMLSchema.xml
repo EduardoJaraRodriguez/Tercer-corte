@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:estudiante xmlns:tns="http://www.example.org/NewXMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/NewXMLSchema NewXMLSchema.xsd ">
+  <tns:Codigo>102509</tns:Codigo>
+  <tns:Nombre>Eduardo</tns:Nombre>
+  <tns:Semestre>
+    <tns:Numero>8</tns:Numero>
+    <tns:curso>
+      <tns:Nombre>aplicaciones</tns:Nombre>
+      <tns:Codigo>NA1043</tns:Codigo>
+      <tns:Nota_1>5.0</tns:Nota_1>
+      <tns:Nota_2>5.0</tns:Nota_2>
+      <tns:Nota_3>5.0</tns:Nota_3>
+      <tns:Nota_Final>5.0</tns:Nota_Final>
+    </tns:curso>
+    <tns:curso>
+      <tns:Nombre>calculo III</tns:Nombre>
+      <tns:Codigo>NA1345</tns:Codigo>
+      <tns:Nota_1>4.0</tns:Nota_1>
+      <tns:Nota_2>4.0</tns:Nota_2>
+      <tns:Nota_3>3.8</tns:Nota_3>
+      <tns:Nota_Final>4.0</tns:Nota_Final>
+    </tns:curso><tns:curso>
+      <tns:Nombre>programacion I</tns:Nombre>
+      <tns:Codigo>NA1245</tns:Codigo>
+      <tns:Nota_1>1.0</tns:Nota_1>
+      <tns:Nota_2>1.0</tns:Nota_2>
+      <tns:Nota_3>1.0</tns:Nota_3>
+      <tns:Nota_Final>1.0</tns:Nota_Final>
+    </tns:curso><tns:curso>
+      <tns:Nombre>fundamentos</tns:Nombre>
+      <tns:Codigo>NA0987</tns:Codigo>
+      <tns:Nota_1>5.0</tns:Nota_1>
+      <tns:Nota_2>5.0</tns:Nota_2>
+      <tns:Nota_3>5.0</tns:Nota_3>
+      <tns:Nota_Final>5.0</tns:Nota_Final>
+    </tns:curso><tns:curso>
+      <tns:Nombre>Investigacion</tns:Nombre>
+      <tns:Codigo>NA8759</tns:Codigo>
+      <tns:Nota_1>5.0</tns:Nota_1>
+      <tns:Nota_2>5.0</tns:Nota_2>
+      <tns:Nota_3>5.0</tns:Nota_3>
+      <tns:Nota_Final>5.0</tns:Nota_Final>
+    </tns:curso>
+  </tns:Semestre>
+</tns:estudiante>
