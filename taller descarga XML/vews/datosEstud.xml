@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Estudiante>
+ <nombre>Carlos Eduardo</nombre>
+ <apellidos>Jara Rodriguez</apellidos>
+ <codigo>102509</codigo>
+ <programa>Sistemas</programa>
+ <jornada>Noche</jornada>
+ <celular>3114743348</celular>
+ <semestre>1</semestre>
+ <turno>8</turno>
+ <promedio>3.8</promedio>
+
+</Estudiante>
+  
