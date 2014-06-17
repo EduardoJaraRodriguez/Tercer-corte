@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Docentes>
+ <docente>
+  <Cursos>
+	<curso>
+		<ID>1</ID>
+		<codigo>DA12098</codigo>
+		<materia>CALCULO</materia>
+		<dia>MARTES</dia>
+		<hora>13:30</hora>
+		<salon>NUKAK</salon>
+		<profesor>FRANCISCO</profesor>	
+	</curso>
+	<curso>
+		<ID>2</ID>
+		<codigo>NA124689</codigo>
+		<materia>PROGRAMACIÓN I</materia>
+		<dia>MARTES</dia>
+		<hora>18:30</hora>
+		<salon>QUIMBAYA</salon>
+		<profesor>RUBEN MANRIQUE</profesor>	
+	</curso>
+	<curso>
+		<ID>3</ID>
+		<codigo>NA1098</codigo>
+		<materia>APLICACIONES WEB</materia>
+		<dia>MIERCOLES</dia>
+		<hora>18:30</hora>
+		<salon>SALON 503</salon>
+		<profesor>bRYAN RODRIGUEZ</profesor>	
+	</curso>
+  </Cursos>  
+  
+ </docente>
+</Docentes>
+
